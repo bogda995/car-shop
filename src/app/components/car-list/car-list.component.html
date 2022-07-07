@@ -1,0 +1,36 @@
+
+<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="16px">
+    <ng-container *ngFor="let car of cars">
+      <mat-card class="car-card">
+        <mat-card-header>
+          <mat-card-title [routerLink]="[car.id]">{{ car.name }}</mat-card-title>
+          <mat-card-subtitle>{{ car.model }}</mat-card-subtitle>
+        </mat-card-header>
+   
+        <div>
+          <img
+            [title]="car.name + car.model + ' details'"
+            class="car-card-image"
+            mat-card-image
+            src="{{ car.imgUrl }}"
+            alt="car image"
+          />
+        </div>
+  
+        <mat-card-content>
+          <mat-card-actions>
+            <button mat-stroked-button (click)="carRent()" class="rent-button">
+              Test Drive
+            </button>          
+            <p class="car-price">
+              {{ car.price | currency: "EUR":"symbol":"4.0-0" }}
+            </p>
+            <button mat-raised-button (click)="addToCart(car)" class="buy-button">
+              Buy
+            </button>
+          </mat-card-actions>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+  </div>
+  

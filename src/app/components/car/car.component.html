@@ -1,0 +1,33 @@
+<div *ngIf="car" class="car-container">
+    <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="5px">
+      <mat-card class="image-container">
+        <mat-card-title>{{car.name}}|{{ car.model }}{{ car.motor }}|{{ car.horsePower }}|{{ car.torque }}</mat-card-title>
+        <img class="container_images" src="{{ car.imgUrl }}" />
+      </mat-card>
+      <!-- <mat-divider [vertical]="true"></mat-divider> -->
+      <mat-card class="specs-container">
+        <mat-card-title class="mat-card-title">Technical data</mat-card-title>
+        <mat-card-content>
+          <ul>
+            <li>{{ car.name }}</li>
+            <mat-divider></mat-divider>
+            <li>Model {{ car.model }}</li>
+            <mat-divider></mat-divider>
+            <li>{{ car.motor }}</li>
+            <mat-divider></mat-divider>
+            <li>Delivers {{ car.horsePower }} hp</li>
+            <mat-divider></mat-divider>
+            <li>Torque {{ car.torque }}</li>
+            <mat-divider></mat-divider>
+            <li>{{ car.price | currency: "EUR":"symbol":"4.0-0"  }}</li>
+          </ul>
+          <div *ngIf="car.inStock === true">
+            <button class="buy-car" (click)="addToCart(car)">Buy</button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <!-- <h4 *ngIf="car.description">Description: {{ car.description }}</h4> -->
+    </div>
+  </div>
+  
+  

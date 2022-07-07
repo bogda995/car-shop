@@ -1,0 +1,11 @@
+<a [routerLink]="['/cars']">
+    <h1>Luxury Cars</h1>
+  </a>
+  <a [routerLink]="['/cars']">
+    <img src="./assets/img/Logo.png" alt="logo" />
+  </a>
+  
+  <a routerLink="/cart" class="button fancy-button">
+    <i class="material-icons">shopping_cart </i>
+    <div class="button">{{cartService.items.length | number}}</div>
+  </a>

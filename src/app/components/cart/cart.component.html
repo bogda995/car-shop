@@ -1,0 +1,15 @@
+<h3>Cart
+    <div class="cart-item" *ngFor="let item of items">
+        <span>{{item.name}}</span>
+        <span>{{item.model}}</span>
+        <span>{{item.price | currency}} </span>
+        <button (click)="removeCar(item)">
+            <p>
+                <fa-icon [ngStyle]="{ color: 'white' }" [icon]="faTimes"></fa-icon>
+            </p>
+        </button>
+    </div>
+    <div *ngIf="items">
+        <button (click)="clearCart()">Clear Cart</button>
+    </div>
+</h3>
