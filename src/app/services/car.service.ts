@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, throwError } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
 
 import {Car} from "../common/model/car";
 
@@ -120,7 +119,7 @@ export class CarService {
   //   }
   // ];
 
-  private serverUrl = 'https://car-shop-api.netlify.app/';
+  private serverUrl = 'https://cryptic-wave-03072.herokuapp.com';
 
   constructor(private httpClient: HttpClient) {
   }
