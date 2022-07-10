@@ -120,7 +120,7 @@ export class CarService {
   //   }
   // ];
 
-  private serverUrl = 'http://localhost:3000';
+  private serverUrl = 'https://car-shop-api.netlify.app/';
 
   constructor(private httpClient: HttpClient) {
   }
